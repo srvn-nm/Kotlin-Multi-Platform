@@ -45,11 +45,6 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
-
-            // Android-specific Firebase bill of materials (BOM) for dependency management
-            implementation(project.dependencies.platform(libs.firebase.bom))
-            // Android-specific dependencies, usually handled by BOM
-            implementation(libs.firebase.auth.ktx)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -62,10 +57,6 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(projects.shared)
 
-            // 1. GitLive Firebase CORE (Required for all Firebase features)
-            implementation(libs.firebase.core)
-            // 2. GitLive Firebase AUTHENTICATION (For sign-in/sign-up)
-            implementation(libs.firebase.auth)
             // Kotlin Coroutines Flow for handling reactive user state
             implementation(libs.kotlinx.coroutines.core)
         }
